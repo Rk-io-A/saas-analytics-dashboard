@@ -1,63 +1,53 @@
-# SaaS Analytics Dashboard 📊
+# SaaS Analytics Dashboard
 
-**Full Stack SaaS Subscription Analytics Dashboard**
+Full-stack portfolio project demonstrating subscription analytics UI and backend patterns.
 
-Track MRR, Churn, Revenue, Active Users and more. Perfect portfolio project for Full Stack Developers.
+> **Status:** engineering demo. MRR, churn, revenue, subscriber counts and other metrics are illustrative until connected to verified billing/customer events.
 
-## 📁 Structure
+## Stack
 
+```text
+Frontend   Next.js 14 + TypeScript + Tailwind CSS
+Backend    FastAPI + SQLAlchemy + Pydantic
+Database   SQLite locally / PostgreSQL-ready
+Auth       JWT
 ```
-saas-analytics-dashboard/
-├── frontend/          # Next.js 14 + Tailwind CSS + TypeScript
-├── backend/           # FastAPI + SQLAlchemy
-├── .gitignore
-└── README.md
-```
 
-## ✨ Features
+## Demonstrated metrics
 
-- 📈 MRR (Monthly Recurring Revenue) tracking
-- 📉 Churn rate calculation
-- 👥 Active subscribers count
-- 💰 Revenue overview
-- 🔐 JWT Authentication
-- 🎨 Modern dark/light dashboard UI
-- 📡 Ready for Stripe webhook integration
+- monthly recurring revenue;
+- churn-rate calculation patterns;
+- active subscriber counts;
+- revenue overview;
+- dashboard/authentication flows;
+- billing-webhook integration direction.
 
-## 🛠️ Tech Stack
+## Local setup
 
-| Layer     | Technology                        |
-|-----------|-----------------------------------|
-| Frontend  | Next.js 14, TypeScript, Tailwind  |
-| Backend   | FastAPI, SQLAlchemy, Pydantic     |
-| Database  | SQLite (local) / PostgreSQL       |
-| Auth      | JWT                               |
+Backend:
 
-## 🚀 How to Run
-
-### Backend
 ```bash
 cd backend
 python -m venv venv
-venv\Scripts\activate          # Windows
+source venv/bin/activate
 pip install -r requirements.txt
 uvicorn main:app --reload --port 8000
 ```
-→ http://localhost:8000  |  Docs: http://localhost:8000/docs
 
-### Frontend
+Frontend:
+
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
-→ http://localhost:3000
 
-## 👨‍💻 Author
+## Production requirements
 
-**Rajiv Kapur**  
-Software Architect & Full Stack Developer  
-[Portfolio](https://rajivkapur.in.net) · [GitHub](https://github.com/Rk-io-A)
+For real financial/subscription analytics, ingest verified provider webhooks server-side, verify signatures, deduplicate events, store immutable source events, use correct currency/timezone rules and distinguish estimates from recognized revenue. Never accept revenue or subscription state directly from the browser.
 
----
-⭐ Star this repo if you find it useful!
+## Author
+
+Rajiv Kapur — Software Architect & Full-Stack Developer
+
+Portfolio: `https://rajivkapur.in.net`
